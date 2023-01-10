@@ -53,7 +53,7 @@ def kashi1(url1):
 
 df = kashi1(url)
 df1 = df.loc[df.totalBorrowAm > 1]
-#df1.to_csv('kashirekted.csv')
+
 idda=df1.assetid.tolist()
 iddc=df1.collateralid.tolist()
 idd=idda+iddc
@@ -92,5 +92,4 @@ df4['diffrence2']=df4['collValueUsd']-(df4['assetam']*df4['assetprice'].astype(f
 df4['diff']=df4[['diffrence', 'diffrence2']].max(axis=1)
 df5=df4[df4.diffrence < 0]
 df5.reset_index(drop=True, inplace=True)
-df5.to_csv('AIlamer1.4.csv')
 
